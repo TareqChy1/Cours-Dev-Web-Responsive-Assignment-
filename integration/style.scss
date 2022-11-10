@@ -1,0 +1,262 @@
+
+body {
+	font-family: "Open Sans", sans-serif;
+	color: #1b1b1b;
+	background-color: #ebebeb;
+}
+a {
+	text-decoration: inherit;
+	color: inherit;
+}
+.top-header {
+	background: white;
+	height: 75px;
+	.content {
+		max-width: 1070px;
+		margin-right: auto;
+		margin-left: auto;
+		display: flex;
+		align-items: center;
+		.logo {
+			width: 180px;
+			height: 75px;
+			background-image: url(./assets/img/musicca-logo.png);
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		.primary-menu {
+			display: flex;
+			column-gap: 20px;
+			flex-grow: 1;
+			margin-left: 20px;
+			.menu-item {
+				&:hover {
+					background-color: #ebebeb;
+				}
+			}
+			.menu-item.active {
+				background-color: #ebebeb;
+			}
+		}
+		.secondary-menu {
+			display: flex;
+			column-gap: 20px;
+			.menu-item {
+				background-color: #72ac51;
+				color: white;
+				&:hover {
+					background-color: #47752d;
+				}
+			}
+		}
+	}
+	.menu-item {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-left: 15px;
+		padding-right: 15px;
+		border-radius: 99999px;
+		font-size: 14px;
+		font-weight: 600;
+		cursor: pointer;
+	}
+	.mobile-menu {
+		display: none;
+		display: none;
+	}
+	.navheader {
+		background-size: 22px 17px;
+		background-repeat: no-repeat;
+		background-position: center;
+		height: 20px;
+		width: 20px;
+		margin-left: auto;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		padding-right: 10px;
+	}
+}
+.page-content {
+	max-width: 1070px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 20px;
+	display: flex;
+	column-gap: 20px;
+	.left-panel {
+		width: 25%;
+		.menu {
+			background-color: white;
+			.menu-item {
+				font-size: 18px;
+				padding: 20px;
+				font-weight: 600;
+			}
+			.menu-item.active {
+				color: white;
+				background-color: #72ac51;
+			}
+			hr {
+				border-bottom: 0;
+				margin-top: 0;
+				margin-bottom: 0;
+				border-top: 1px solid #ebebeb;
+			}
+		}
+	}
+	.right-panel {
+		width: 75%;
+		.title {
+			font-size: 36px;
+			font-weight: 400;
+			color: #565656;
+		}
+		.cards {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 20px;
+			.card {
+				background-color: white;
+				padding-top: 30px;
+				padding-left: 30px;
+				padding-right: 30px;
+				flex-basis: 40%;
+				.title {
+					font-weight: 600;
+					font-size: 20px;
+				}
+				.illustration {
+					background-image: url(./assets/img/company.jpg);
+					background-size: cover;
+					background-repeat: no-repeat;
+					background-position: center;
+					height: 150px;
+					margin-left: -30px;
+					margin-right: -30px;
+				}
+				p {
+					span.sub-para {
+						color: gray;
+					}
+				}
+			}
+		}
+	}
+}
+.mobile-right-panel {
+	display: none;
+}
+
+/*For mobile  application */
+@media (max-width: 480px) {
+	.top-header {
+		height: auto;
+		.mobile-menu {
+			.mobile-menu-item {
+				background-color: #72ac51;
+				color: #ebebeb;
+				padding-top: 15px;
+				padding-bottom: 15px;
+				padding-left: 15px;
+				padding-right: 15px;
+				font-size: 14px;
+				font-weight: 800;
+			}
+			hr {
+				width: 100%;
+				margin-top: 0px;
+				margin-bottom: 0px;
+				height: 1.5px;
+				background-color: #47752d;
+				border: none;
+			}
+		}
+		.content {
+			.logo {
+				display: none;
+			}
+			.primary-menu {
+				display: none;
+			}
+			.secondary-menu {
+				display: none;
+			}
+		}
+		.mobile-menu.expand {
+			display: block;
+		}
+		.navheader {
+			display: block;
+		}
+	}
+	.mobile-right-panel {
+		display: block;
+		flex-direction: column;
+		margin-top: 20px;
+		margin-bottom: 30px;
+		h1 {
+			font-weight: 500;
+			font-size: 35px;
+			margin-left: 15px;
+			color: #565656;
+		}
+		.mobile-cards {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 30px;
+			.mobile-card {
+				background-color: white;
+				margin-left: 15px;
+				margin-right: 15px;
+				padding-left: 15px;
+				padding-right: 10px;
+				flex-basis: 100%;
+				border-radius: 5px;
+				.mobile-title {
+					padding-top: 10px;
+					padding-bottom: 5px;
+					margin-bottom: 5px;
+					margin-top: 5px;
+					font-size: 20px;
+				}
+				p {
+					padding-top: 5px;
+					padding-bottom: 10px;
+					margin-top: 3px;
+					margin-bottom: 15px;
+					font-size: 14px;
+					span.sub-para {
+						color: gray;
+					}
+				}
+			}
+		}
+	}
+	.page-content {
+		margin-top: 0px;
+		.left-panel {
+			.menu {
+				display: none;
+			}
+		}
+		.right-panel {
+			.title {
+				display: none;
+			}
+			.cards {
+				display: none;
+			}
+		}
+	}
+}
+@media (min-width: 481px) {
+	.top-header {
+		.navheader {
+			display: none;
+		}
+	}
+}
+
+
+/*For mobile  application */
